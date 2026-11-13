@@ -308,7 +308,7 @@ button.card:hover{transform:translateY(-3px)}
 .debate .p{flex:1;display:flex;flex-direction:column;gap:8px;border:2px dashed #c8a25a77;padding:10px;background:#ffffff08;text-align:left}
 .debate .p.hot{background:#c8a25a22}
 .debate .p .hd{display:flex;gap:12px;align-items:center}
-.debate .p .pf{width:78px;height:90px;border-radius:39px 39px 4px 4px;overflow:hidden;box-shadow:0 0 0 2px var(--gold);flex:none}
+.debate .p .pf{width:78px;height:90px;border-radius:39px 39px 4px 4px;overflow:hidden;box-shadow:0 0 0 2px var(--gold);flex:none;background:#141a26 center/cover}
 .debate .p .pf svg{width:100%;height:100%}
 .debate .p h4{margin:0;font-family:var(--disp);font-size:25px;color:var(--gold2)}.debate .p h4 small{display:block;font-family:var(--body);font-size:15px;color:#e6dcc6;font-weight:400}
 .debate .mid{flex:1.1;display:flex;flex-direction:column;justify-content:center;gap:12px;align-items:center}
@@ -589,7 +589,7 @@ function MapView(host,o={}){const{P,path,MW,MH}=GEO,NS='http://www.w3.org/2000/s
 
 /* ---------- core ---------- */
 const $=(s,r=document)=>r.querySelector(s);
-function h(tag,a,...kids){const e=document.createElement(tag);if(a)for(const k in a){const v=a[k];if(v==null||v===false)continue;if(k==='class')e.className=v;else if(k==='html')e.innerHTML=v;else if(k==='text')e.textContent=v;else if(k.startsWith('on'))e.addEventListener(k.slice(2),v);else if(k==='style')e.style.cssText=v;else e.setAttribute(k,v)}kids.flat().forEach(c=>c!=null&&c!==false&&e.append(c));return e}
+function h(tag,a,...kids){const e=document.createElement(tag);if(a)for(const k in a){const v=a[k];if(v==null||v===false)continue;if(k==='class')e.className=v;else if(k==='html')e.innerHTML=v;else if(k==='text')e.textContent=v;else if(k.startsWith('on'))e.addEventListener(k.slice(2),v);else if(k==='style')e.style.cssText=v;else e.setAttribute(k,v)}kids.flat(Infinity).forEach(c=>c!=null&&c!==false&&e.append(c));return e}
 const A=id=>(window.ASSETS&&ASSETS[id])||'';
 const SLOT={};
 const sleep=ms=>new Promise(r=>setTimeout(r,window.FAST?1:ms));
